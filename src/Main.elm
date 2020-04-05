@@ -1,41 +1,60 @@
 module Main exposing (main)
 
 import Browser
-import Html exposing (Html, div, text)
+import Html exposing (Html, div, input, text)
+import Html.Attributes exposing (value)
+import Html.Events exposing (onInput)
+
+
+main : Program () Model Msg
+main =
+    Browser.element { init = init, update = update, view = view, subscriptions = subscriptions }
+
+
+
+-- MODEL
 
 
 type alias Model =
-    { thing : String
-    }
+    String
 
 
-initialModel : Model
-initialModel =
-    { thing = "Why hello there"}
+init : () -> ( Model, Cmd Msg )
+init _ =
+    ( "Why hello there", Cmd.none )
+
+
+
+-- UPDATE
 
 
 type Msg
     = HandleThingInput String
 
 
-update : Msg -> Model -> Model
-update msg model =
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg _ =
     case msg of
-        HandleThingInput str -> { thing = str }
+        HandleThingInput str ->
+            ( str, Cmd.none )
 
+
+
+-- SUBSCRIPTIONS
+
+
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+    Sub.none
+
+
+
+-- VIEW
 
 
 view : Model -> Html Msg
 view model =
     div []
-        [ text "Why hello there"
+        [ input [ onInput HandleThingInput, value model ] []
+        , div [] [ text model ]
         ]
-
-
-main : Program () Model Msg
-main =
-    Browser.sandbox
-        { init = initialModel
-        , view = view
-        , update = update
-        }
