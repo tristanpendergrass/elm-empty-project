@@ -2,6 +2,7 @@ module Main exposing (main)
 
 import Browser
 import Html exposing (Html, div, text)
+import Html.Attributes exposing (class)
 
 
 main : Program () Model Msg
@@ -52,4 +53,4 @@ subscriptions _ =
 
 view : Model -> Html Msg
 view model =
-    div [] [ text "Why hello there." ]
+    div [ class "m-6 text-xl" ] [ text "Why hello there." ]
