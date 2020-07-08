@@ -1,9 +1,7 @@
 module Main exposing (main)
 
 import Browser
-import Html exposing (Html, div, input, text)
-import Html.Attributes exposing (value)
-import Html.Events exposing (onInput)
+import Html exposing (Html, div, text)
 
 
 main : Program () Model Msg
@@ -54,7 +52,4 @@ subscriptions _ =
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ input [ onInput HandleThingInput, value model ] []
-        , div [] [ text model ]
-        ]
+    div [] [ text "Why hello there." ]
