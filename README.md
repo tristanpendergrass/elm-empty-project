@@ -4,10 +4,9 @@ Demo at https://www.tristanpendergrass.com/elm-empty-project.
 
 ```
 $ npm install -g parcel-bundler
+$ npm install
 $ npm start
 ```
-
-This should start a
 
 # Deployment
 
