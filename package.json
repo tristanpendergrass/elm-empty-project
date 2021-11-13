@@ -2,6 +2,7 @@
   "devDependencies": {
     "@parcel/transformer-elm": "^2.0.0-rc.0",
     "@parcel/transformer-image": "^2.0.0-rc.0",
+    "autoprefixer": "^9.8.6",
     "cssnano": "^4.1.10",
     "elm": "^0.19.1-5",
     "elm-hot": "^1.1.4",
@@ -11,7 +12,9 @@
     "parcel-plugin-static-files-copy": "^2.3.1",
     "postcss": "^8.3.11",
     "postcss-cli": "^7.1.1",
-    "sass": "^1.26.3"
+    "postcss-loader": "^6.2.0",
+    "sass": "^1.26.3",
+    "tailwindcss": "^2.2.19"
   },
   "scripts": {
     "parcel:serve": "parcel src/index.html",
@@ -27,9 +30,5 @@
     "start": "npm-run-all -s clean-dev-windows -p postcss:watch parcel:serve",
     "build-mac": "npm-run-all -s clean-prod-mac postcss:build parcel:build",
     "start-mac": "npm-run-all -s clean-dev-mac -p postcss:watch parcel:serve"
-  },
-  "dependencies": {
-    "autoprefixer": "^9.8.6",
-    "tailwindcss": "^2.0.1-compat"
   }
 }
