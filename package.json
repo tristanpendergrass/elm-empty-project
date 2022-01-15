@@ -21,14 +21,14 @@
     "parcel:serve": "parcel src/index.html",
     "parcel:watch": "parcel watch src/index.html",
     "parcel:build": "parcel build src/index.html --dist-dir docs --public-url https://www.tristanpendergrass.com/elm-empty-project/",
-    "postcss:watch": "postcss src/index.pcss -o src/index.css --env development -w",
-    "postcss:build": "postcss src/index.pcss -o src/index.css --env production",
+    "postcss:watch-legacy": "postcss src/main.css -o src/index.css --env development -w",
+    "postcss:build-legacy": "postcss src/index.pcss -o src/index.css --env production",
     "clean-dev-windows": "if exist '.cache\\' rmdir /s /q .cache & if exist 'dist\\' rmdir /s /q dist",
     "clean-prod-windows": "if exist '.cache\\' rmdir /s /q .cache & if exist 'docs\\' rmdir /s /q docs",
     "clean-dev-mac": "rm -rf dist .cache",
     "clean-prod-mac": "rm -rf docs .cache",
     "build": "npm-run-all -s clean-prod-windows postcss:build parcel:build",
-    "start": "npm-run-all -s clean-dev-windows -p postcss:watch parcel:serve",
+    "start": "npm-run-all -s clean-dev-windows -p parcel:serve",
     "build-mac": "npm-run-all -s clean-prod-mac postcss:build parcel:build",
     "start-mac": "npm-run-all -s clean-dev-mac -p postcss:watch parcel:serve"
   }
