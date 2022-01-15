@@ -2,7 +2,7 @@
   "devDependencies": {
     "@parcel/transformer-elm": "^2.0.0-rc.0",
     "@parcel/transformer-image": "^2.0.0-rc.0",
-    "autoprefixer": "^10.4.0",
+    "autoprefixer": "^10.4.2",
     "cssnano": "^4.1.10",
     "elm": "^0.19.1-5",
     "elm-hot": "^1.1.4",
@@ -10,7 +10,7 @@
     "npm-run-all": "^4.1.5",
     "parcel": "^2.0.0-rc.0",
     "parcel-reporter-static-files-copy": "^1.3.4",
-    "postcss": "^8.3.11",
+    "postcss": "^8.4.5",
     "postcss-cli": "^7.1.1",
     "postcss-import": "^14.0.2",
     "postcss-loader": "^6.2.0",
