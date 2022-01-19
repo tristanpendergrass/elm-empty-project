@@ -53,4 +53,4 @@ subscriptions _ =
 
 view : Model -> Html Msg
 view model =
-    div [ class "m-6 text-xl" ] [ text "Why hello there." ]
+    div [ class "m-6 text-xl" ] [ text model ]
