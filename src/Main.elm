@@ -1,8 +1,10 @@
 module Main exposing (main)
 
 import Browser
-import Html exposing (Html, div, text)
-import Html.Attributes exposing (class)
+import Browser.Events
+import Html exposing (..)
+import Html.Attributes exposing (..)
+import Html.Events exposing (..)
 
 
 main : Program () Model Msg
