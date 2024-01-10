@@ -17,12 +17,12 @@ main =
 
 
 type alias Model =
-    String
+    {}
 
 
 init : () -> ( Model, Cmd Msg )
 init _ =
-    ( "Why hello there", Cmd.none )
+    ( {}, Cmd.none )
 
 
 
@@ -30,14 +30,18 @@ init _ =
 
 
 type Msg
-    = HandleThingInput String
+    = NoOp
+    | HandleAnimationFrameDelta Float
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
-update msg _ =
+update msg model =
     case msg of
-        HandleThingInput str ->
-            ( str, Cmd.none )
+        NoOp ->
+            ( model, Cmd.none )
+
+        HandleAnimationFrameDelta delta ->
+            ( model, Cmd.none )
 
 
 
@@ -46,7 +50,9 @@ update msg _ =
 
 subscriptions : Model -> Sub Msg
 subscriptions _ =
-    Sub.none
+    Sub.batch
+        [ Browser.Events.onAnimationFrameDelta HandleAnimationFrameDelta
+        ]
 
 
 
@@ -55,4 +61,4 @@ subscriptions _ =
 
 view : Model -> Html Msg
 view model =
-    div [ class "m-6 text-xl" ] [ text model ]
+    div [ class "p-16" ] [ text "Why hello there" ]
