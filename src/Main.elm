@@ -5,6 +5,9 @@ import Browser.Events
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
+import Json.Decode as D
+import Json.Encode as E
+import Random
 
 
 main : Program () Model Msg
@@ -59,6 +62,11 @@ subscriptions _ =
 -- VIEW
 
 
+proseClass : Attribute Msg
+proseClass =
+    class "prose prose-sm md:prose-base"
+
+
 view : Model -> Html Msg
 view model =
-    div [ class "p-16" ] [ text "Why hello there" ]
+    div [ class "p-16", proseClass ] [ text "Why hello there" ]
