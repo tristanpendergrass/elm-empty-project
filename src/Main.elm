@@ -5,9 +5,6 @@ import Browser.Events
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
-import Json.Decode as D
-import Json.Encode as E
-import Random
 
 
 main : Program () Model Msg
@@ -43,7 +40,7 @@ update msg model =
         NoOp ->
             ( model, Cmd.none )
 
-        HandleAnimationFrameDelta delta ->
+        HandleAnimationFrameDelta _ ->
             ( model, Cmd.none )
 
 
@@ -68,5 +65,5 @@ proseClass =
 
 
 view : Model -> Html Msg
-view model =
+view _ =
     div [ class "p-16", proseClass ] [ text "Why hello there" ]
